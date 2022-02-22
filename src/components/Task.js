@@ -11,7 +11,7 @@ const tasks=[
         id:2,
         text:'Meeting at School',
         day:'Feb 6th at 1:30pm',
-        remainder:true
+        remainder:false
     },
     {
         id:3,
