@@ -5,7 +5,7 @@ const tasks=[
         id:1,
         text:'Doctors Appointment',
         day:'Feb 5th at 2:30pm',
-        remainder:true
+        remainder:false
     },
     {
         id:2,
