@@ -33,7 +33,12 @@ function App() {
   const x=true
 
   // Delete Task
-const deleteTask=(id)=>{
+const deleteTask=async(id)=>{
+
+    await fetch(`http://localhost:5000/tasks/${id}`,{
+      method:'DELETE'
+    })
+
     console.log('delete',id)
     setTasks(tasks.filter((task)=>task.id !== id))
 }
@@ -46,13 +51,33 @@ const toggleRemainder=(id)=>{
 }
 
 // Add  Task
-const addTask=(task)=>{
-  console.log(task)
-  const id=Math.floor(Math.random()*10000)+1;
-  console.log(id)
+const addTask= async(task)=>{
 
-  const newTask={id,...task}
-  setTasks([...tasks,newTask])
+  const res=await fetch('http://localhost:5000/tasks',{
+    method:'POST',
+    headers:{
+      'Content-type':'application/json'
+    },
+    body:JSON.stringify(task)
+  })
+  
+  const data =await res.json()
+
+  setTasks([...tasks,data])
+
+/// Approach with json server
+
+
+
+
+  /// Approach without json server
+
+  // console.log(task)
+  // const id=Math.floor(Math.random()*10000)+1;
+  // console.log(id)
+
+  // const newTask={id,...task}
+  // setTasks([...tasks,newTask])
 
 }
 
