@@ -39,7 +39,7 @@ const deleteTask=(id)=>{
   return (
     <div className="container">
      <Header title='Task Tracker' />
-     <Task tasks={tasks} onDelete={deleteTask}/>
+     {tasks.length>0 ? (<Task tasks={tasks} onDelete={deleteTask}/> ):('No Tasks to Show')}
     </div>
     
   );
