@@ -29,10 +29,17 @@ function App() {
   )
   const name='Prateek'
   const x=true
+
+  // Delete Task
+const deleteTask=(id)=>{
+    console.log('delete',id)
+    setTasks(tasks.filter((task)=>task.id !== id))
+}
+
   return (
     <div className="container">
      <Header title='Task Tracker' />
-     <Task tasks={tasks}/>
+     <Task tasks={tasks} onDelete={deleteTask}/>
     </div>
     
   );

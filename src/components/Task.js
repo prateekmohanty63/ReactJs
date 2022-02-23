@@ -2,13 +2,14 @@ import React from 'react'
 import {useState} from 'react'
 import InvTask from './InvTask'
 
-const Task=({tasks})=>{
+const Task=({tasks,onDelete})=>{
 
 
   return (
     <>
      {tasks.map((task)=>(
-       <InvTask key={task.id} task={task} />
+       <InvTask key={task.id} task={task} onDelete={onDelete}/>
+       
       ))}
     </>
   )
