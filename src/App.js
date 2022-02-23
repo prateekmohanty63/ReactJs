@@ -44,10 +44,15 @@ const toggleRemainder=(id)=>{
   ? {...task,remainder:!task.remainder} : task ))
 }
 
+// Add  Task
+const addTask=(task)=>{
+  console.log(task)
+}
+
   return (
     <div className="container">
      <Header title='Task Tracker' />
-     <AddTask />
+     <AddTask onAdd={addTask}/>
      {tasks.length>0 ? (<Task tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder}/> ):('No Tasks to Show')}
      
     </div>
