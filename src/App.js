@@ -36,10 +36,15 @@ const deleteTask=(id)=>{
     setTasks(tasks.filter((task)=>task.id !== id))
 }
 
+// Toggle Remainder
+const toggleRemainder=(id)=>{
+  console.log(id)
+}
+
   return (
     <div className="container">
      <Header title='Task Tracker' />
-     {tasks.length>0 ? (<Task tasks={tasks} onDelete={deleteTask}/> ):('No Tasks to Show')}
+     {tasks.length>0 ? (<Task tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder}/> ):('No Tasks to Show')}
     </div>
     
   );
