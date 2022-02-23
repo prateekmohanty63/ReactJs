@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Task from "./components/Task";
 import {useState} from 'react'
+import AddTask from "./components/AddTask";
 
 function App() {
 
@@ -47,6 +48,7 @@ const toggleRemainder=(id)=>{
     <div className="container">
      <Header title='Task Tracker' />
      {tasks.length>0 ? (<Task tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder}/> ):('No Tasks to Show')}
+     <AddTask />
     </div>
     
   );
