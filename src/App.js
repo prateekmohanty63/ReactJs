@@ -39,6 +39,8 @@ const deleteTask=(id)=>{
 // Toggle Remainder
 const toggleRemainder=(id)=>{
   console.log(id)
+  setTasks(tasks.map((task)=>task.id === id
+  ? {...task,remainder:!task.remainder} : task ))
 }
 
   return (
