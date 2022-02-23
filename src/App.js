@@ -47,6 +47,12 @@ const toggleRemainder=(id)=>{
 // Add  Task
 const addTask=(task)=>{
   console.log(task)
+  const id=Math.floor(Math.random()*10000)+1;
+  console.log(id)
+
+  const newTask={id,...task}
+  setTasks([...tasks,newTask])
+
 }
 
   return (
